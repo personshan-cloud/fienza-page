@@ -124,19 +124,24 @@ a { text-decoration: none; color: inherit; }
 .tab-btn:not(.active):hover { color: #222; }
 
 /* ─── TAB CONTENT ─── */
+/* ─── TAB CONTENT ─── */
 .tab-content-area {
   background: #fff;
-  padding: 18px 48px 0;
+  padding: 18px 48px 24px; /* 适当增加下边距 */
+  display: flex;           /* 关键：使用 flex 布局 */
+  justify-content: flex-start; /* 关键：让内容靠左对齐 */
 }
-.tab-panel { display: none; max-width: 680px; }
-.tab-panel.active { display: block; }
-.tab-panel p {
-  font-size: 13px;
-  color: #444;
-  line-height: 1.78;
-  margin-bottom: 8px;
+
+.tab-panel {
+  display: none;
+  max-width: 800px;        /* 可以稍微调大一点，或者删掉这行让它更宽 */
+  width: 100%;             /* 确保宽度充满 */
+  text-align: left;        /* 确保文字靠左 */
 }
-.tab-panel p:last-child { margin-bottom: 0; }
+
+.tab-panel.active {
+  display: block;
+}
 
 /* ─── SHOP BY CATEGORY ─── */
 .shop-by-wrap {
